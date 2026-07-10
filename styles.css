@@ -1,0 +1,1185 @@
+/* ==========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================== */
+:root {
+    --primary: #124870;       /* Color de predominio institucional */
+    --primary-dark: #0b2e49;  /* Oscurecimiento del predominante para hovers */
+    --secondary: #2a7c7a;     /* Complementario 1 (Acentos de estabilidad) */
+    --accent: #f7c75c;        /* Complementario 2 (Realces y Líneas en Amarillo) */
+    --bg-light: #f4f7f9;      
+    --bg-white: #ffffff;
+    --text-main: #192530;     
+    --text-soft: #4b5d6e;     
+    --border-color: #dbe3eb;  
+    --max-width: 1200px;
+    --font-title: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ==========================================
+   2. COMPONENTES REUTILIZABLES
+   ========================================== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-tinted {
+    background-color: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.section-header hr {
+    width: 70px;
+    height: 4px;
+    background-color: var(--accent);
+    border: none;
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+p {
+    color: var(--text-soft);
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-family: var(--font-title);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--bg-white);
+    box-shadow: 0 4px 14px rgba(18, 72, 112, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: var(--bg-white);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-white);
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--bg-white);
+    padding: 18px 24px;
+    font-family: var(--font-title);
+    font-weight: 600;
+}
+
+td {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-soft);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==========================================
+   3. NAVBAR / ENCABEZADO
+   ========================================== */
+.navbar {
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 80px;
+}
+
+.navbar .container {
+    display: table;
+    height: 100%;
+}
+
+.nav-brand-link {
+    text-decoration: none;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-height: 50px;
+    width: auto;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.brand-text {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.brand-text span {
+    color: var(--secondary);
+}
+
+.nav-menu {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: color 0.25s ease;
+    font-size: 0.95rem;
+}
+
+.nav-item:hover {
+    color: var(--accent);
+}
+
+/* ==========================================
+   4. HERO SECTION
+   ========================================== */
+.hero {
+    padding: 140px 0 60px 0; 
+    background-color: var(--bg-white);
+}
+
+.hero-unified-card {
+    background-color: #f4f7f9; 
+    border-radius: 24px;
+    padding: 60px 50px 0 50px; 
+    box-shadow: 0 10px 30px rgba(18, 72, 112, 0.04);
+    display: table;
+    width: 100%;
+}
+
+.hero-animate {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.1s; 
+}
+
+.hero-row {
+    display: table-row;
+}
+
+.hero-col-text {
+    display: table-cell;
+    width: 52%; 
+    vertical-align: middle;
+    padding-right: 30px;
+    padding-bottom: 60px; 
+}
+
+.hero-col-img {
+    display: table-cell;
+    width: 48%; 
+    vertical-align: bottom; 
+    text-align: center;
+}
+
+.hero p.subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--secondary);
+}
+
+.hero p.lead {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-soft);
+}
+
+.hero-doctor-img {
+    width: 100%;
+    max-width: 460px; 
+    height: auto;
+    display: inline-block;
+    vertical-align: bottom;
+    filter: drop-shadow(0 10px 25px rgba(18, 72, 112, 0.08)); 
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    
+    }
+}
+
+/* ==========================================
+   5. PERFIL Y TRAYECTORIA
+   ========================================== */
+.profile-row {
+    display: table;
+    width: 100%;
+    margin-bottom: 50px; 
+}
+
+.profile-col-img {
+    display: table-cell;
+    width: 40%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.profile-col-text {
+    display: table-cell;
+    width: 60%;
+    vertical-align: middle;
+    padding-left: 60px;
+}
+
+.profile-circle {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 5px solid var(--bg-white);
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-hr {
+    width:70px; 
+    height:4px; 
+    background-color:var(--accent); 
+    border:none; 
+    margin:15px 0 25px 0;
+}
+
+.trajectory-list {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.trajectory-list li {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: var(--text-soft);
+}
+
+.trajectory-list li i {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    font-size: 1.4rem;
+    color: var(--secondary);
+}
+
+.list-subtext {
+    margin: 2px 0 0 0; 
+    font-size: 0.95rem;
+}
+
+.association-block-premium {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.association-title-header {
+    font-family: var(--font-title);
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+.association-logos-container-premium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; 
+    flex-wrap: wrap;
+}
+
+.association-card-img {
+    background-color: var(--bg-white);
+    padding: 25px 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(18, 72, 112, 0.05);
+    border: 1px solid rgba(18, 72, 112, 0.06);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.association-card-img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(18, 72, 112, 0.1);
+    border-color: var(--secondary);
+}
+
+.association-logo-large {
+    height: 95px;       
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* ==========================================
+   6. BLOQUES/TARJETAS DE SERVICIOS (GRID)
+   ========================================== */
+.grid-3 {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 25px 0;
+    margin-left: -25px;
+    margin-right: -25px;
+}
+
+.grid-col {
+    display: table-cell;
+    background-color: var(--bg-white);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border-bottom: 4px solid var(--border-color);
+    transition: all 0.3s ease;
+    vertical-align: top;
+}
+
+.grid-col:hover {
+    transform: translateY(-5px);
+    border-bottom-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(18, 72, 112, 0.1);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(42, 124, 122, 0.1);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.service-icon-img {
+    width: 42px;         
+    height: 42px;
+    object-fit: contain; 
+    display: block;
+}
+
+/* ==========================================
+   7. DETALLE TÉCNICO
+   ========================================== */
+.split-section {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.split-col-text {
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+    padding: 80px 60px;
+    background-color: var(--bg-light);
+}
+
+.split-text-white {
+    background-color: var(--bg-white); 
+    padding-left: 80px;
+}
+
+.split-col-img {
+    display: table-cell;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    vertical-align: stretch;
+}
+
+.split-img-1 {
+    background-image: url('http://googleusercontent.com/image_collection/image_retrieval/7465502720076414991');
+}
+
+.split-img-2 {
+    background-image: url('http://googleusercontent.com/image_collection/image_retrieval/5285368992004150885');
+}
+
+.bullet-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    color: var(--text-soft);
+}
+
+.bullet-list li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+}
+
+/* ==========================================
+   8. SECCIÓN DE POLIZAS Y SEGUROS (CUADROS UNIFORMES)
+   ========================================== */
+.insurance-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 25px; 
+}
+
+.insurance-row {
+    display: table-row;
+}
+
+.insurance-card {
+    display: table-cell;
+    width: 50%; 
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 45px 35px;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+.insurance-card:hover {
+    border-color: var(--accent); 
+    box-shadow: 0 10px 25px rgba(247, 199, 92, 0.18);
+}
+
+.insurance-card i {
+    font-size: 3rem; 
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.insurance-card h4 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.insurance-subtext {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-soft);
+}
+
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    background: var(--bg-white);
+    padding: 50px 0; 
+}
+
+.slider-track {
+    display: flex;
+    width: calc(260px * 12);
+    animation: scrollLogos 32s linear infinite; 
+}
+
+.slide-logo {
+    width: 260px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.slide-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.65); 
+    transition: all 0.3s ease;
+}
+
+.slider-container:hover .slide-logo img {
+    filter: grayscale(0) opacity(1);
+}
+
+@keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-260px * 6)); } 
+}
+
+
+/* ==========================================
+   9. CENTROS QUIRÚRGICOS (DIRECCIONES ESTILIZADAS)
+   ========================================== */
+.surgery-center-box {
+    background-color: var(--bg-white);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border-bottom: 4px solid var(--border-color);
+    padding: 45px 35px !important; 
+    text-align: center;
+}
+
+.surgery-location-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 15px;
+    text-align: left;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.surgery-location-item i {
+    color: var(--secondary); /* Color verde/azul de acento clínico */
+    font-size: 1.2rem;
+    margin-right: 10px;
+    margin-top: 3px; /* Pequeño ajuste para centrarlo con la primera línea */
+}
+
+.surgery-location-item span {
+    font-size: 1rem;
+    color: var(--text-soft);
+    line-height: 1.5;
+}
+
+/* Ajuste responsivo para asegurar legibilidad en celulares */
+@media (max-width: 991px) {
+    .surgery-center-box {
+        padding: 35px 25px !important;
+    }
+}
+
+/* ==========================================
+   10. SEDES DE ATENCIÓN 
+   ========================================== */
+.orve-premium-card {
+    background-color: var(--bg-white) !important;
+    padding: 50px !important; /* Espaciado interno generoso */
+    border-radius: 24px !important;
+    box-shadow: 0 10px 30px rgba(18, 72, 112, 0.05) !important;
+    border: 1px solid rgba(18, 72, 112, 0.06);
+}
+
+.locations-row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Columna de la Imagen a la Izquierda */
+.locations-col-img-left {
+    display: table-cell;
+    width: 40%;
+    vertical-align: middle;
+    padding-right: 40px;
+    text-align: center;
+}
+
+/* Imagen a gran escala bien proporcionada */
+.orve-brand-img-large {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    display: inline-block;
+}
+
+/* Columna del Texto a la Derecha */
+.locations-col-text-right {
+    display: table-cell;
+    width: 60%;
+    vertical-align: middle;
+    border-left: 1px solid var(--border-color);
+    padding-left: 40px;
+}
+
+.locations-col-text-right h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.location-address {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.location-address i {
+    color: var(--secondary);
+    font-size: 1.3rem;
+    margin-right: 6px;
+}
+
+.location-focus {
+    font-size: 1rem;
+    color: var(--text-soft);
+    margin-bottom: 25px;
+}
+
+/* Distintivo para Pólizas y Particulares */
+.orve-badge-coverage {
+    display: inline-block;
+    background-color: rgba(42, 124, 122, 0.08); /* Tono suave basado en el secundario */
+    color: var(--secondary);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-left: 4px solid var(--secondary);
+}
+
+.orve-badge-coverage i {
+    margin-right: 6px;
+}
+
+/* Ajustes responsivos para pantallas móviles */
+@media (max-width: 991px) {
+    .orve-premium-card {
+        padding: 30px !important;
+    }
+    
+    .locations-col-img-left,
+    .locations-col-text-right {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        border-left: none !important;
+        text-align: center !important;
+    }
+    
+    .locations-col-img-left {
+        margin-bottom: 35px;
+    }
+    
+    .orve-brand-img-large {
+        max-width: 240px; /* Tamaño adaptado a celulares */
+    }
+    
+    .orve-badge-coverage {
+        display: block;
+        text-align: left;
+    }
+}
+
+/* ==========================================
+   11. TESTIMONIALES
+   ========================================== */
+.quote-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    padding: 40px 0;
+}
+
+blockquote {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--primary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+blockquote::before {
+    content: "\f10d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    opacity: 0.08;
+    font-size: 5rem;
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    transform: translateX(-50%);
+}
+
+.quote-author {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+/* ==========================================
+   12. PIE DE PÁGINA 
+   ========================================== */
+.cta-footer {
+    background-color: var(--primary);
+    color: var(--bg-white);
+    padding: 80px 0 40px 0;
+}
+
+.footer-header-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cta-footer h2 {
+    color: var(--bg-white);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-header-text p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.footer-row-split {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: 40px;
+}
+
+.footer-col-left {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding-right: 50px;
+}
+
+.footer-col-title {
+    color: var(--bg-white);
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-action-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 20px;
+    padding: 15px 30px;
+    font-size: 1.05rem;
+    border-radius: 12px;
+    background-color: transparent !important; /* Transparencia total */
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-footer .btn-whatsapp {
+    border: 2px solid #25d366;
+    color: #25d366;
+    box-shadow: none;
+}
+
+.cta-footer .btn-whatsapp:hover {
+    background-color: rgba(37, 211, 102, 0.1) !important; /* Destello suave al pasar el mouse */
+    transform: translateY(-2px);
+}
+
+.cta-footer .btn-instagram {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: var(--bg-white);
+    background: transparent !important;
+    box-shadow: none;
+}
+
+.cta-footer .btn-instagram:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: var(--bg-white);
+    transform: translateY(-2px);
+}
+
+.footer-action-btn i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.footer-col-right {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding-left: 50px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-brand-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.footer-brand-img {
+    max-height: 45px;
+    width: auto;
+    margin-right: 12px;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); 
+}
+
+.footer-brand-text {
+    font-family: var(--font-title);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--bg-white);
+}
+
+.footer-brand-text span {
+    color: var(--accent); 
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.footer-contact-item i {
+    color: var(--bg-white); 
+    font-size: 1.2rem;
+    margin-right: 15px;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+.footer-contact-item span {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+}
+
+.footer-mail-link {
+    color: var(--bg-white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-mail-link:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+}
+
+/* Adaptación fluida a dispositivos móviles */
+@media (max-width: 991px) {
+    .footer-row-split {
+        display: block !important;
+    }
+    
+    .footer-col-left,
+    .footer-col-right {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        border-left: none !important;
+    }
+    
+    .footer-col-left {
+        margin-bottom: 40px;
+    }
+    
+    .footer-action-btn {
+        max-width: 100%; 
+    }
+    
+    .footer-brand-box {
+        justify-content: center;
+    }
+    
+    .footer-contact-item {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   13. BOTÓN FLOTANTE DE WHATSAPP
+   ========================================== */
+.whatsapp-floating {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-floating:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+
+/* ==========================================
+   14. DISEÑO RESPONSIVO (ADAPTACIÓN MÓVIL)
+   ========================================== */
+@media (max-width: 991px) {
+    .hero-unified-card {
+        padding: 40px 30px 0 30px !important;
+    }
+
+    .hero-col-text {
+        padding-bottom: 30px !important;
+    }
+
+    .hero-col-text, .hero-col-img,
+    .profile-col-img, .profile-col-text,
+    .grid-3, .grid-col, .split-col-text, .split-col-img,
+    .insurance-grid, .insurance-card, .insurance-row,
+    .locations-row, .locations-col-map, .locations-col-text {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .hero-col-text {
+        text-align: center;
+    }
+
+    .hero h1 { font-size: 2.5rem; }
+
+    .hero-doctor-img {
+        max-width: 310px;
+        margin-top: 10px;
+    }
+
+    .profile-col-img {
+        margin-bottom: 40px;
+    }
+
+    .association-logos-container-premium {
+        gap: 20px;
+    }
+    .association-card-img {
+        padding: 20px 35px;
+        width: 100%;
+        max-width: 320px; 
+    }
+    .association-logo-large {
+        height: 75px; 
+    }
+
+    .grid-3 {
+        margin: 0;
+    }
+
+    .grid-col {
+        margin-bottom: 30px;
+    }
+
+    .split-col-img {
+        height: 350px;
+    }
+
+    .insurance-card {
+        margin-bottom: 15px;
+    }
+
+    .locations-col-map {
+        margin-bottom: 30px;
+    }
+    
+    .orve-premium-card {
+        padding: 30px !important;
+    }
+
+    blockquote {
+        font-size: 1.4rem;
+    }
+
+    .navbar .container {
+        display: block;
+    }
+    .nav-brand-link {
+        display: block;
+    }
+    .nav-brand {
+        justify-content: center;
+        padding: 10px 0;
+    }
+    .nav-menu {
+        display: block;
+        text-align: center;
+        padding: 5px 0 15px 0;
+    }
+    .navbar {
+        height: auto;
+        position: relative;
+    }
+    .hero {
+        padding-top: 20px;
+    }
+    .nav-item {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-floating {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .logo-img {
+        max-height: 40px;
+    }
+    .association-logo-large {
+        height: 55px; 
+    }
+}

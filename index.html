@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Daniel Ramírez Botero</title>
+
+    <!-- FAVICON (Nueva línea agregada para cargar tu recurso local) -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Vinculación con el archivo de estilos independiente -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-brand-link">
+                <div class="nav-brand">
+                    <img src="images/logo.png" alt="Logo Dr. Daniel Ramírez B." class="logo-img">
+                </div>
+            </a>
+            <div class="nav-menu">
+                <a href="#perfil" class="nav-item">Perfil</a>
+                <a href="#servicios" class="nav-item">Servicios</a>
+                <a href="#seguros" class="nav-item">Pólizas y Convenios</a>
+                <a href="#sedes" class="nav-item">Sede</a>
+                <a href="#contacto" class="nav-item">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-unified-card hero-animate">
+                <div class="hero-row">
+                    <div class="hero-col-text">
+                        <p class="subtitle">Ortopedia y traumatología</p>
+                        <h1>Dr. Daniel<br><span>Ramírez Botero</span></h1>
+                        <p class="lead">Especialista en reemplazos articulares de rodilla y cadera.<br>Cirugía de trauma de alta complejidad.</p>
+                        <a href="#contacto" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Agendar Cita</a>
+                    </div>
+                    <div class="hero-col-img">
+                        <!-- Imagen escalada a mayor tamaño sin fondo rígido -->
+                        <img src="images/daniel.png" alt="Dr. Daniel Ramírez Botero" class="hero-doctor-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PERFIL / TRAYECTORIA -->
+    <section class="section" id="perfil">
+        <div class="container">
+            <div class="profile-row">
+                <div class="profile-col-img">
+                    <div class="profile-circle">
+                        <img src="images/cirugia.png">
+                    </div>
+                </div>
+                <div class="profile-col-text">
+                    <h2>Formación y Excelencia Médica</h2>
+                    <hr class="profile-hr">
+                    
+                    <ul class="trajectory-list">
+                        <li>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <strong>Médico General</strong>
+                            <p class="list-subtext">Fundación Universitaria San Martín.</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-certificate"></i>
+                            <strong>Ortopedista y Traumatólogo</strong>
+                            <p class="list-subtext">Universidad de Buenos Aires - Ministerio de salud.</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-hospital-user"></i>
+                            <strong>Fellowship en Reemplazos Articulares</strong>
+                            <p class="list-subtext">Universidad Pontificia Bolivariana.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Asociaciones Médicas -->
+            <div class="association-block-premium">
+                <p class="association-title-header">Miembro Titular</p>
+                <div class="association-logos-container-premium">
+                    <div class="association-card-img">
+                        <img src="images/sccot.png" alt="Logo SCCOT" class="association-logo-large">
+                    </div>
+                    <div class="association-card-img">
+                        <img src="images/soccar.png" alt="Logo SOCCAR" class="association-logo-large">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVICIOS PRINCIPALES -->
+    <section class="section section-tinted" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Servicios Especializados</h2>
+                <hr>
+                <p>Tratamientos adaptados a las necesidades particulares de cada paciente, combinando<br>precisión quirúrgica y tecnologías de última generación.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="grid-col">
+                    <!-- Icono personalizado de Cadera -->
+                    <div class="card-icon">
+                        <img src="images/cadera.png" alt="Cirugía de Cadera" class="service-icon-img">
+                    </div>
+                    <h3>Cirugía de Cadera</h3>
+                    <p>Reemplazos articulares primarios y cirugías de revisión de alta complejidad. Tratamiento de artrosis y otras enfermedades de la cadera.</p>
+                </div>
+                <div class="grid-col">
+                    <!-- Icono personalizado de Rodilla -->
+                    <div class="card-icon">
+                        <img src="images/rodilla.png" alt="Cirugía de Rodilla" class="service-icon-img">
+                    </div>
+                    <h3>Cirugía de Rodilla</h3>
+                    <p>Reemplazos articulares primarios y cirugías de revisión de alta complejidad. Tratamiento de artrosis y otras enfermedades de la rodilla.</p>
+                </div>
+                <div class="grid-col">
+                    <!-- Icono personalizado de Trauma/Hueso -->
+                    <div class="card-icon">
+                        <img src="images/hueso.png" alt="Trauma y Fracturas" class="service-icon-img">
+                    </div>
+                    <h3>Trauma y Fracturas</h3>
+                    <p>Resolución inmediata y reconstructiva de lesiones traumáticas severas de las extremidades superiores e inferiores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEGUROS Y PÓLIZAS -->
+    <section class="section section-tinted" id="seguros">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pólizas y Seguros</h2>
+                <hr>
+                <p>Facilitamos su acceso a una medicina de nivel superior. Reciba atención especializada a través de su aseguradora de confianza o de forma particular.</p>
+            </div>
+
+            <!-- Mosaico Estructurado de Convenios Unificado -->
+            <div class="insurance-grid">
+                <div class="insurance-row">
+                    <!-- Cuadro 1: Pólizas y Seguros -->
+                    <div class="insurance-card">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h4>PÓLIZAS Y SEGUROS</h4>
+                        <p class="insurance-subtext">Atención integral mediante las principales aseguradoras de salud del país.</p>
+                    </div>
+                    <!-- Cuadro 2: Particulares -->
+                    <div class="insurance-card">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <h4>PARTICULARES</h4>
+                        <p class="insurance-subtext">Consultas médicas externas, valoraciones especializadas y cirugías particulares.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDER INFINITO CON IMÁGENES PNG -->
+            <div class="slider-container">
+                <div class="slider-track">
+                    <!-- Bloque Original de Logos -->
+                    <div class="slide-logo"><img src="images/sura.png" alt="SURA"></div>
+                    <div class="slide-logo"><img src="images/medplus.png" alt="MedPlus"></div>
+                    <div class="slide-logo"><img src="images/medisanitas.png" alt="Medisanitas"></div>
+                    <div class="slide-logo"><img src="images/colmedica.png" alt="Colmédica"></div>
+                    <div class="slide-logo"><img src="images/bolivar.png" alt="Seguros Bolívar"></div>
+                    <div class="slide-logo"><img src="images/allianz.png" alt="Allianz"></div>
+                    
+                    <!-- Duplicado idéntico para asegurar un loop infinito fluido y continuo -->
+                    <div class="slide-logo"><img src="images/sura.png" alt="SURA"></div>
+                    <div class="slide-logo"><img src="images/medplus.png" alt="MedPlus"></div>
+                    <div class="slide-logo"><img src="images/medisanitas.png" alt="Medisanitas"></div>
+                    <div class="slide-logo"><img src="images/colmedica.png" alt="Colmédica"></div>
+                    <div class="slide-logo"><img src="images/bolivar.png" alt="Seguros Bolívar"></div>
+                    <div class="slide-logo"><img src="images/allianz.png" alt="Allianz"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CENTROS QUIRURGICOS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Centros Quirúrgicos</h2>
+                <hr>
+                <p>Instituciones médicas de primer nivel en Medellín donde el Dr. Daniel Ramírez ejecuta sus procedimientos quirúrgicos avanzados con los más estrictos estándares de seguridad clínica.</p>
+            </div>
+
+            <div class="grid-3">
+                <!-- Tarjeta 1: Clínica Las Vegas -->
+                <div class="grid-col surgery-center-box">
+                    <h3>Clínica Las Vegas</h3>
+                    <div class="surgery-location-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Calle 2 Sur # 46-55<br>El Poblado, Medellín, Colombia.</span>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 2: INCODOL -->
+                <div class="grid-col surgery-center-box">
+                    <h3>INCODOL</h3>
+                    <div class="surgery-location-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Calle 33 #74B-267<br>Laureles, Medellín, Colombia.</span>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 3: Clínica Victoriana -->
+                <div class="grid-col surgery-center-box">
+                    <h3>Clínica Victoriana</h3>
+                    <div class="surgery-location-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Carrera 49 # 58-19<br>Prado, Medellín, Colombia.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSULTORIO -->
+    <section class="section section-tinted" id="sedes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dónde Encontrarnos</h2>
+                <hr>
+                <p>Agende su cita e inicie su tratamiento por medio de póliza y particular directamente en nuestras instalaciones ubicadas en El Poblado.</p>
+            </div>
+
+            <!-- Tarjeta ORVE -->
+            <div class="orve-premium-card">
+                <div class="locations-row">
+                    <!-- Izquierda: Imagen destacada de ORVE -->
+                    <div class="locations-col-img-left">
+                        <img src="images/orve.png" alt="ORVE Ortopedistas Las Vegas" class="orve-brand-img-large">
+                    </div>
+                    <!-- Derecha: Datos informativos del consultorio -->
+                    <div class="locations-col-text-right">
+                        <h3>ORVE Ortopedistas Las Vegas</h3>
+                        
+                        <p class="location-address">
+                            <i class="fa-solid fa-location-dot"></i> Calle 2 Sur # 46-55 <strong>Clínica Las Vegas</strong><br> El Poblado, Medellín, Colombia.
+                        </p>
+                        
+                        <p class="location-focus">
+                            <strong>Atención:</strong> Consulta externa especializada, diagnóstico clínico avanzado y seguimiento oportuno de evolución funcional y postoperatoria.
+                        </p>
+                        
+                        <!-- Aviso destacado -->
+                        <div class="orve-badge-coverage">
+                            <i class="fa-solid fa-hand-holding-medical"></i> Atendemos pólizas de salud y pacientes particulares.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO Y LLAMADO A LA ACCIÓN -->
+    <footer class="cta-footer" id="contacto">
+        <div class="container">
+            <div class="footer-header-text">
+                <h2>¿Listo para recuperar la movilidad?</h2>
+                <p>Agende una valoración especializada y dé el primer paso hacia una vida sin dolor.</p>
+            </div>
+            
+            <div class="footer-row-split">
+                <!-- Columna Izquierda: Canales de Interacción Rápida -->
+                <div class="footer-col-left">
+                    <h3 class="footer-col-title">Contáctanos</h3>
+                    
+                    <!-- Botón de WhatsApp -->
+                    <a href="https://wa.link/5149oo" class="btn btn-whatsapp footer-action-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp
+                    </a>
+                    
+                    <!-- Botón de Instagram -->
+                    <a href="https://www.instagram.com/drdanielramirezbotero/" class="btn btn-instagram footer-action-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i> @drdanielramirezbotero
+                    </a>
+                </div>
+                
+                <!-- Columna Derecha: Información Corporativa y Corporativa -->
+                <div class="footer-col-right">
+                    <!-- Isologo e Identidad Visual del Doctor -->
+                    <div class="footer-brand-box">
+                        <img src="images/logo2.png " alt="Logo Dr. Daniel Ramírez B." class="footer-brand-img">
+                    </div>
+                    
+                    <!-- Números de Contacto -->
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span><strong>Teléfonos de Contacto:</strong><br>+57 (319) 675-2874<br> +57 (320) 753-1643</span>
+                    </div>
+                    
+                    <!-- Correo Electrónico Institucional -->
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span><strong>Correo Electrónico:</strong><br><a href="mailto:drdanielramirezortopedista@gmail.com" class="footer-mail-link">drdanielramirezortopedista@gmail.com</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Créditos y Derechos Reservados -->
+            <div class="footer-bottom">
+                 2026 Dr. Daniel Ramírez Botero — Ortopedia y Traumatología. Todos los derechos reservados.<br>
+                Medellín, Colombia.
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.link/5149oo" class="whatsapp-floating" target="_blank" rel="noopener noreferrer" title="Escríbenos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
